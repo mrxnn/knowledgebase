@@ -11,6 +11,7 @@ import { EmployeesComponent } from './components/employees/employees.component';
 import { LibraryComponent } from './components/library/library.component';
 import { FinanceComponent } from './components/finance/finance.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { SearchbarComponent } from './components/searchbar/searchbar.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     EmployeesComponent,
     LibraryComponent,
     FinanceComponent,
-    SidebarComponent
+    SidebarComponent,
+    SearchbarComponent
   ],
   imports: [
     BrowserModule,
