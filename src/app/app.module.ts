@@ -10,6 +10,7 @@ import { StudentsComponent } from './components/students/students.component';
 import { EmployeesComponent } from './components/employees/employees.component';
 import { LibraryComponent } from './components/library/library.component';
 import { FinanceComponent } from './components/finance/finance.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FinanceComponent } from './components/finance/finance.component';
     StudentsComponent,
     EmployeesComponent,
     LibraryComponent,
-    FinanceComponent
+    FinanceComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,

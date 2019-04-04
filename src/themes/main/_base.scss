@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'George Rounded', serif;
+  font-size: 1.6rem;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  background-color: #ecf0f1;
+}
+
+.sidebar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 30rem;
+  height: 100vh;
+  background-color: white;
+
+  // &__content {
+  // }
+
+  &__brand {
+    padding: 3rem;
+    background-color: #f7f7f7;
+    // h3 {
+    // }
+  }
+
+  // &__menu {
+  // }
+
+  &__menu-title {
+    padding: 3rem 3rem 2rem 3rem;
+    opacity: .4;
+    text-transform: uppercase;
+
+    // h4 {
+    // }
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  // &__item {
+  // }
+  
+  &__link {
+    padding: 2rem 3rem;
+    display: inline-block;
+    width: 100%;
+    text-decoration: none;
+    font-weight: bold;
+    color: #000;
+
+    &--active {
+      color: #686de0;
+      background-color: rgba(#686de0, .3);
+      border-left: 4px solid currentColor;
+    }
+    
+    &:hover {
+      background-color: rgba(#686de0, .1);
+      &.sidebar__link--active {
+        background-color: rgba(#686de0, .3);
+      }
+    }
+  }
+}
