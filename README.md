@@ -12,7 +12,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Deployment
 
-To deploy the production build to a live server on cloud, Run `npm run deploy`. This will push the `dist/knowledgebase` directory to `gh-pages` branch, which is used by [netlify](https://www.netlify.com) to deploy the application.
+To deploy the production build to a live server on cloud, Run `npm run deploy`. This will push the `dist/knowledgebase` directory to `gh-pages` branch, which is used by [netlify](https://www.netlify.com) to deploy the application. And navigate to `https://youthful-aryabhata-12b12e.netlify.com` to see the result.
 
 ## Running unit tests
 
