@@ -40,6 +40,12 @@ body {
   height: 100vh;
   background-color: var(--color-4);
 
+  &__content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
   &__brand {
     height: 8rem;
     padding: 0 3rem;
@@ -98,6 +104,35 @@ body {
         background-color: rgba(#686de0, .3);
       }
     }
+  }
+
+  &__footer {
+    margin-top: auto;
+    padding: 3rem;
+    text-align: center;
+  }
+
+  &__social {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+
+    ion-icon {
+      cursor: pointer;
+
+      &:hover {
+        color: var(--color-1);
+      }
+
+      &:not(:last-child) {
+        margin-right: 2rem;
+      }
+    }
+  }
+
+  &__copyrights {
+    font-size: 1.3rem;
+    opacity: .7;
+    line-height: 1.6;
   }
 }
 
