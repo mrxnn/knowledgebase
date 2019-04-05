@@ -1,18 +1,22 @@
 # Knowledgebase
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.7.
+https://img.shields.io/david/:kind(dev|optional|peer)?/:user/:repo.svg
+https://img.shields.io/apm/l/:packageName.svg
+https://img.shields.io/npm/v/:scope/:packageName.svg
+
+Institute management system for Gathika Institute which offers both online and offline capabilities.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+
+## Deployment
+
+To deploy the production build to a live server on cloud, Run `npm run deploy`. This will push the `dist/knowledgebase` directory to `gh-pages` branch, which is used by [netlify](https://www.netlify.com) to deploy the application.
 
 ## Running unit tests
 
