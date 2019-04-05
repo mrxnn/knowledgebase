@@ -1,9 +1,5 @@
 # Knowledgebase
 
-https://img.shields.io/david/:kind(dev|optional|peer)?/:user/:repo.svg
-https://img.shields.io/apm/l/:packageName.svg
-https://img.shields.io/npm/v/:scope/:packageName.svg
-
 Institute management system for Gathika Institute which offers both online and offline capabilities.
 
 ## Development server
