@@ -3,4 +3,8 @@ export interface Course {
   title: string;
   description: string;
   duration: number;
+  maxStudents: number;
+  currentStudents: number;
+  level: string;
+  audience: string;
 }

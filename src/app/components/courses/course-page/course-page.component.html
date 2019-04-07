@@ -8,7 +8,7 @@
       <h2 class="course-page__title">{{ course.title }}</h2>
     </div>
   </div>
-  <p class="course-page__about">{{ course.about }}</p>
+  <p class="course-page__about">{{ course.description }}</p>
   <br><br>
 
   <!--stats-->
@@ -29,6 +29,10 @@
     <div class="course-page__card">
       {{ course.audience }}
       <span class="course-page__label">Audience</span>
+    </div>
+    <div class="course-page__card">
+      <ion-icon name="add"></ion-icon>
+      <span class="course-page__label">More</span>
     </div>
   </div>
 

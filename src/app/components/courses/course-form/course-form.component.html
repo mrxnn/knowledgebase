@@ -16,6 +16,22 @@
       <input type="number" class="form__field" ngModel name="duration" required>
     </div>
     <div class="form__group">
+      <label for="maxStudents" class="form__label">Max Students</label>
+      <input type="number" class="form__field" ngModel name="maxStudents" required>
+    </div>
+    <div class="form__group">
+      <label for="level" class="form__label">Level</label>
+      <select class="form__field" ngModel name="level" required>
+        <option value="Beginner">Beginner</option>
+        <option value="Intermediate">Intermediate</option>
+        <option value="Advanced">Advanced</option>
+      </select>
+    </div>
+    <div class="form__group">
+      <label for="audience" class="form__label">Audience</label>
+      <input type="text" class="form__field" ngModel name="audience" required>
+    </div>
+    <div class="form__group">
       <button class="btn" type="submit" [disabled]="!form.valid">
         <ion-icon name="add"></ion-icon>
         <span>Add Course</span>
