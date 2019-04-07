@@ -274,12 +274,25 @@ body {
   align-items: center;
 }
 
+@keyframes slideIn {
+  0% {
+    opacity: .5;
+    transform: translateY(2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0)
+  }
+}
+
 // forms
 .form {
   background-color: white;
   padding: 3rem 2rem;
   width: 35%;
   position: relative;
+  animation: slideIn .5s ease;
+
 
   &__close-btn {
     position: absolute;
