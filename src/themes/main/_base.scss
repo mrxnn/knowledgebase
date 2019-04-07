@@ -415,6 +415,25 @@ body {
 
 // course details page
 .course-page {
+
+  &__heading {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  &__back {
+    width: 6rem;
+    height: 6rem;
+    background-color: #5155cc;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin-right: 1rem;
+  }
+
   &__id {
     color: var(--color-1);
   }
@@ -431,6 +450,7 @@ body {
   &__statistics {
     margin-top: 2rem;
     display: flex;
+    justify-content: space-between;
   }
 
   &__card {
@@ -443,9 +463,25 @@ body {
     flex-direction: column;
     align-items: center;
     font-weight: 900;
+    position: relative;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 0 1rem 1rem rgba(black, .2);
+    }
 
     &:not(:last-child) {
       margin-right: 3rem;
+
+      &::after {
+        content: "";
+        display: inline-flex;
+        height: 2px;
+        width: 100%;
+        background-color: tomato;
+        position: absolute;
+        left: 100%;
+      }
     }
   }
 

@@ -1,6 +1,13 @@
 <div *ngIf="course | async as course" class="course-page">
-  <h5 class="course-page__id">{{ course.id }}</h5><br>
-  <h2 class="course-page__title">{{ course.title }}</h2>
+  <div class="course-page__heading">
+    <a href="#" class="course-page__back">
+      <ion-icon name="arrow-back" ></ion-icon>
+    </a>
+    <div>
+      <h5 class="course-page__id">{{ course.id }}</h5>
+      <h2 class="course-page__title">{{ course.title }}</h2>
+    </div>
+  </div>
   <p class="course-page__about">{{ course.about }}</p>
   <br><br>
 

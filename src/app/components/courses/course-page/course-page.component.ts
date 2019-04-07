@@ -5,7 +5,6 @@ import { of, Observable } from 'rxjs';
 import { Course } from '../course.model';
 import { AngularFirestore } from '@angular/fire/firestore';
 
-
 @Component({
   selector: 'app-course-page',
   templateUrl: './course-page.component.html',
