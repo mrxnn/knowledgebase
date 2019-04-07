@@ -12,6 +12,8 @@ import { LibraryComponent } from './components/library/library.component';
 import { FinanceComponent } from './components/finance/finance.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
+import { CoursePageComponent } from './components/courses/course-page/course-page.component';
+import { CoursesHomeComponent } from './components/courses/courses-home/courses-home.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { SearchbarComponent } from './components/searchbar/searchbar.component';
     LibraryComponent,
     FinanceComponent,
     SidebarComponent,
-    SearchbarComponent
+    SearchbarComponent,
+    CoursePageComponent,
+    CoursesHomeComponent
   ],
   imports: [
     BrowserModule,

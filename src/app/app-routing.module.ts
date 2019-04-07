@@ -8,6 +8,8 @@ import { EmployeesComponent } from './components/employees/employees.component';
 import { LibraryComponent } from './components/library/library.component';
 import { FinanceComponent } from './components/finance/finance.component';
 import { CoursesComponent } from './components/courses/courses.component';
+import { CoursePageComponent } from './components/courses/course-page/course-page.component';
+import { CoursesHomeComponent } from './components/courses/courses-home/courses-home.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -21,7 +23,15 @@ const routes: Routes = [
       { path: 'employees', component: EmployeesComponent },
       { path: 'library', component: LibraryComponent },
       { path: 'finance', component: FinanceComponent },
-      { path: 'courses', component: CoursesComponent }
+      { 
+        path: 'courses', 
+        component: CoursesComponent,
+        children: [
+          { path: '', redirectTo: 'home', pathMatch: 'full' },
+          { path: 'home', component: CoursesHomeComponent },
+          { path: ':id', component: CoursePageComponent },
+        ]
+      },
     ]
   }
 ];
