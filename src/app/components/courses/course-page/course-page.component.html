@@ -1,1 +1,39 @@
-<h2>{{ courseId | async }}</h2>
+<div *ngIf="course | async as course" class="course-page">
+  <h5 class="course-page__id">{{ course.id }}</h5><br>
+  <h2 class="course-page__title">{{ course.title }}</h2>
+  <p class="course-page__about">{{ course.about }}</p>
+  <br><br>
+
+  <!--stats-->
+  <h2>Statistics 📚 </h2>
+  <div class="course-page__statistics">
+    <div class="course-page__card">
+      0{{ course.duration }}
+      <span class="course-page__label">Months</span>
+    </div>
+    <div class="course-page__card">
+      {{ course.currentStudents }} / {{ course.maxStudents }}
+      <span class="course-page__label">Students</span>
+    </div>
+    <div class="course-page__card">
+      {{ course.level }}
+      <span class="course-page__label">Level</span>
+    </div>
+    <div class="course-page__card">
+      {{ course.audience }}
+      <span class="course-page__label">Audience</span>
+    </div>
+  </div>
+
+  <!--material-->
+  <br><br>
+  <h2>Materials 💗 </h2>
+  <div class="course-page__materials" *ngIf="course.materials else nothing"></div>
+  <ng-template #nothing>
+    <p class="course-page__no-material">
+      This course have no materials at the moment. Those content will be displayed here
+      when they are available. Stay in touch!
+    </p>
+  </ng-template>
+</div>
+

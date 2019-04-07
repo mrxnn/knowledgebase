@@ -412,3 +412,56 @@ body {
     }
   }
 }
+
+// course details page
+.course-page {
+  &__id {
+    color: var(--color-1);
+  }
+
+  &__title {
+    margin-bottom: 1rem;
+  }
+
+  &__about {
+    line-height: 1.6;
+    letter-spacing: .3px;
+  }
+
+  &__statistics {
+    margin-top: 2rem;
+    display: flex;
+  }
+
+  &__card {
+    background-color: white;
+    width: 15rem;
+    height: 15rem;
+    box-shadow: 0 1rem 1rem rgba(black, .1);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 900;
+
+    &:not(:last-child) {
+      margin-right: 3rem;
+    }
+  }
+
+  &__label {
+    font-weight: 400;
+    margin-top: 1rem;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+  }
+
+  &__materials {
+
+  }
+
+  &__no-material {
+    margin-top: 1rem;
+  }
+}
