@@ -1,0 +1,22 @@
+<div class="form-container" (click)="cs.displayForm = false">
+  <form class="form">
+    <div class="form__group">
+      <label for="title" class="form__label">Title</label>
+      <input type="text" class="form__field">
+    </div>
+    <div class="form__group">
+      <label for="description" class="form__label">Description</label>
+      <textarea rows="3" class="form__field"></textarea>
+    </div>
+    <div class="form__group">
+      <label for="duration" class="form__label">Duration</label>
+      <input type="number" class="form__field">
+    </div>
+    <div class="form__group">
+      <button class="btn" type="submit">
+        <ion-icon name="add"></ion-icon>
+        <span>Add Course</span>
+      </button>
+    </div>
+  </form>
+</div>

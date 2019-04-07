@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CourseService } from './course.service';
 
 @Component({
   selector: 'app-courses',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./courses.component.scss']
 })
 export class CoursesComponent implements OnInit {
-
-  constructor() { }
+  constructor(public cs: CourseService) { }
 
   ngOnInit() {
   }
 
+  onAddCourseButtonClicked() {
+    this.cs.displayForm = true;
+  }
 }

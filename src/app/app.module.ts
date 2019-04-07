@@ -19,6 +19,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { CoursePageComponent } from './components/courses/course-page/course-page.component';
 import { CoursesHomeComponent } from './components/courses/courses-home/courses-home.component';
+import { CourseFormComponent } from './components/courses/course-form/course-form.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { CoursesHomeComponent } from './components/courses/courses-home/courses-
     SidebarComponent,
     SearchbarComponent,
     CoursePageComponent,
-    CoursesHomeComponent
+    CoursesHomeComponent,
+    CourseFormComponent
   ],
   imports: [
     BrowserModule,
