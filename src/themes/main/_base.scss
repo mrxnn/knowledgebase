@@ -275,37 +275,57 @@ body {
   background-color: white;
   padding: 3rem 2rem;
   width: 30%;
+  position: relative;
+
+  &__close-btn {
+    position: absolute;
+    right: -4rem;
+    top: -4rem;
+    border: 0;
+    outline: none;
+    width: 3rem;
+    height: 3rem;
+    color: white;
+    background-color: transparent;
+    font-size: 3rem;
+  }
 
   &__group {
-      display: flex;
-      flex-direction: column;
-      &:not(:last-child) {
-          margin-bottom: 2rem;
-      }
+    display: flex;
+    flex-direction: column;
+    &:not(:last-child) {
+        margin-bottom: 2rem;
+    }
   }
   
   &__label {
-      font-weight: 900;
+    font-weight: 900;
   }
 
   &__field {
-      padding: 1rem;
-      border: 1px solid #b1b1b1;
-      background-color: transparent;
+    padding: 1rem;
+    border: 1px solid #b1b1b1;
+    background-color: transparent;
 
-      &:focus {
-          border-color: var(--color-1);
-      }
+    &:focus {
+      outline: 1px solid var(--color-1);
+      border-color: var(--color-1) !important;
+    }
   }
 
   .btn {
-      display: flex;
-      align-items: center;
-      font-family: inherit;
-      font-size: 1.6rem;
-      border: none;
-      outline: none;
-      align-self: flex-start;
-      cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+    font-size: 1.6rem;
+    border: none;
+    outline: none;
+    align-self: flex-start;
+    cursor: pointer;
+
+    &:disabled {
+      cursor: not-allowed;
+      background-color: gray;
+    }
   }
 }
