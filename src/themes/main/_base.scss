@@ -258,7 +258,7 @@ body {
   z-index: 1;
 }
 
-// forms
+// form container
 .form-container {
   position: fixed;
   left: 0;
@@ -271,6 +271,7 @@ body {
   align-items: center;
 }
 
+// forms
 .form {
   background-color: white;
   padding: 3rem 2rem;
@@ -279,15 +280,25 @@ body {
 
   &__close-btn {
     position: absolute;
-    right: -4rem;
-    top: -4rem;
-    border: 0;
+    right: -6rem;
+    top: -6rem;
+    padding: .5rem;
+    border: 1px solid transparent;
+    border-radius: 50%;
     outline: none;
-    width: 3rem;
-    height: 3rem;
+    width: 6rem;
+    height: 6rem;
     color: white;
     background-color: transparent;
     font-size: 3rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      border-color: gray;
+    }
   }
 
   &__group {
@@ -306,6 +317,13 @@ body {
     padding: 1rem;
     border: 1px solid #b1b1b1;
     background-color: transparent;
+    font-family: inherit;
+    font-size: 1.6rem;
+
+    &.ng-invalid.ng-touched {
+      outline: 1px solid tomato;
+      border-color: tomato !important;
+    }
 
     &:focus {
       outline: 1px solid var(--color-1);
