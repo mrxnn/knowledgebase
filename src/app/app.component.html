@@ -1,5 +1,5 @@
 <!--overlay mask-->
-<div class="mask" *ngIf="cs.displayForm"></div>
+<div class="mask" [class.mask--active]="cs.displayForm"></div>
 
 <!--content-->
 <router-outlet></router-outlet>

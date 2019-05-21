@@ -1,5 +1,5 @@
 <div class="form-container">
-  <form class="form" (ngSubmit)="onSubmit(form)" #form="ngForm">
+  <form class="form" (ngSubmit)="onSubmit(form)" #form="ngForm" [class.form--active]="cs.displayForm">
     <button class="form__close-btn" type="button" (click)="cs.displayForm = false;">
       <ion-icon name="close"></ion-icon>
     </button>

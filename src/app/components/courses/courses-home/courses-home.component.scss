@@ -1,0 +1,66 @@
+// courses page
+.course-list {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+// single course card
+.course {
+    width: calc((100% / 3) - 3rem + (3rem / 3) - 1rem);
+    background-color: white;
+    padding: 2rem;
+    padding-bottom: 8rem;
+    margin-bottom: 2rem;
+    position: relative;
+    height: 34rem;
+    box-shadow: 0 1rem 1rem rgba(black, .1);
+    transition: all .3s;
+    border-radius: 2px;
+  
+    &:not(:last-child) {
+      // margin-right: 2rem;
+    }
+  
+    &:hover {
+      box-shadow: 0 1rem 1rem rgba(black, .2);
+    }
+  
+    &__title {
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+  
+    &__description {
+      font-size: 1.5rem;
+      line-height: 1.6;
+      max-height: 12rem;
+      overflow: hidden;
+    }
+  
+    &__btn {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      height: 8rem;
+      width: 8rem;
+      background-color: var(--color-3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--color-1);
+      transition: all .3s;
+  
+      &:hover {
+        background-color: var(--color-1);
+        color: white;
+      }
+  
+      ion-icon {
+        font-size: 2rem;
+        color: inherit;
+      }
+    }
+  }

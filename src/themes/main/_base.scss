@@ -31,170 +31,6 @@ body {
   background-color: var(--color-3);
 }
 
-// sidebar
-.sidebar {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: var(--sidebar-width);
-  height: 100vh;
-  background-color: var(--color-4);
-
-  &__content {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-
-  &__brand {
-    height: 8rem;
-    padding: 0 3rem;
-    display: flex;
-    align-items: center;
-    text-transform: uppercase;
-    background-color: var(--color-3);
-
-    ion-icon {
-      font-size: 3rem;
-      margin-right: 1rem;
-      color: var(--color-1);
-    }
-
-    h3 {
-      font-size: 1.5rem;
-      letter-spacing: 1px;
-    }
-  }
-
-  &__menu-title {
-    padding: 2.4rem 3rem;
-    opacity: .4;
-    text-transform: uppercase;
-  }
-
-  &__list {
-    list-style: none;
-  }
-  
-  &__link {
-    padding: 2rem 3rem;
-    display: inline-block;
-    width: 100%;
-    text-decoration: none;
-    font-weight: bold;
-    color: var(--color-5);
-    display: flex;
-    align-items: center;
-    border-left: 4px solid transparent;
-
-    ion-icon {
-      font-size: 2rem;
-      margin-right: 2rem;
-    }
-
-    &--active {
-      color: var(--color-1);
-      background-color: rgba(#686de0, .3);
-      border-color: currentColor;
-    }
-    
-    &:hover {
-      background-color: rgba(#686de0, .1);
-      &.sidebar__link--active {
-        background-color: rgba(#686de0, .3);
-      }
-    }
-  }
-
-  &__footer {
-    margin-top: auto;
-    padding: 3rem;
-    text-align: center;
-  }
-
-  &__social {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-
-    ion-icon {
-      cursor: pointer;
-
-      &:hover {
-        color: var(--color-1);
-      }
-
-      &:not(:last-child) {
-        margin-right: 2rem;
-      }
-    }
-  }
-
-  &__copyrights {
-    font-size: 1.3rem;
-    opacity: .7;
-    line-height: 1.6;
-  }
-}
-
-// search box
-.search {
-  height: 8rem;
-  width: 100%;
-  background-color: var(--color-4);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 3rem;
-  position: fixed;
-  z-index: 1;
-  
-  &__field {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    
-    ion-icon {
-      font-size: 2rem;
-      margin-right: 2rem;
-    }
-  }
-  
-  &__text {
-    width: 100%;
-    border: 0;
-    margin-right: 2rem;
-    font-family: inherit;
-    font-size: 1.6rem;
-    font-weight: bold;
-    outline: none;
-  }
-
-  &__filters {
-    display: flex;
-    align-items: center;
-
-    ion-icon {
-      font-size: 2rem;
-      margin-right: 2rem;
-    }
-  }
-}
-
-// avatar img
-.avatar {
-  width: 4rem;
-  height: 4rem;
-  background-image: linear-gradient(to right bottom, var(--color-1), var(--color-2));
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--color-4);
-  font-size: 1.2rem;
-  letter-spacing: 1px;
-  cursor: pointer;
-}
-
 // container for all the pages in the dashboard
 .dashboard-page-container {
   width: calc(100% - var(--sidebar-width));
@@ -211,6 +47,9 @@ body {
 
 // normal button
 .btn {
+  border: none;
+  outline: none;
+  font: inherit;
   text-decoration: none;
   background-color: var(--color-1);
   display: inline-block;
@@ -218,6 +57,7 @@ body {
   color: var(--color-4);
   border-radius: 2px;
   transition: background-color .3s;
+  cursor: pointer;
 
   &:hover {
     background-color: var(--color-2);
@@ -241,6 +81,7 @@ body {
   bottom: 5rem;
   cursor: pointer;
   transition: all .3s;
+  z-index: 3;
 
   &:hover {
     transform: translateY(-3px);
@@ -258,7 +99,14 @@ body {
   height: 100vh;
   background-color: rgba(black, .8);
   position: fixed;
-  z-index: 3;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0;
+  transition: all .5s ease-out;
+
+  &--active {
+    opacity: 1;
+  }
 }
 
 // form container
@@ -272,34 +120,32 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-@keyframes slideIn {
-  0% {
-    opacity: .5;
-    transform: translateY(2rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0)
-  }
+  pointer-events: none;
 }
 
 // forms
 .form {
+  pointer-events: all;
   background-color: white;
   padding: 3rem 2rem;
   width: 35%;
-  position: relative;
-  animation: slideIn .5s ease;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(130%);
+  transition: transform .5s ease-out;
 
+  &--active {
+    transform: translateX(0);
+  }
 
   &__close-btn {
     position: absolute;
-    right: -6rem;
-    top: -6rem;
+    top: 6rem;
+    left: -10rem;
     padding: .5rem;
-    border: 1px solid transparent;
+    border: 1px solid gray;
     border-radius: 50%;
     outline: none;
     width: 6rem;
@@ -313,7 +159,8 @@ body {
     align-items: center;
 
     &:hover {
-      border-color: gray;
+      background-color: white;
+      color: black;
     }
   }
 
@@ -331,7 +178,7 @@ body {
 
   &__field {
     padding: 1rem;
-    border: 1px solid #b1b1b1;
+    border: 1px solid #dadadd;
     background-color: transparent;
     font-family: inherit;
     font-size: 1.6rem;
@@ -361,165 +208,5 @@ body {
       cursor: not-allowed;
       background-color: gray;
     }
-  }
-}
-
-// courses page
-.course-list {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  list-style: none;
-}
-
-// single course card
-.course {
-  width: calc((100% / 3) - 3rem + (3rem / 3) - 1rem);
-  background-color: white;
-  padding: 2rem;
-  padding-bottom: 8rem;
-  margin-bottom: 2rem;
-  position: relative;
-  height: 34rem;
-  box-shadow: 0 1rem 1rem rgba(black, .1);
-  transition: all .3s;
-  border-radius: 2px;
-
-  &:not(:last-child) {
-    margin-right: 2rem;
-  }
-
-  &:hover {
-    box-shadow: 0 1rem 1rem rgba(black, .2);
-  }
-
-  &__title {
-    margin-bottom: 2rem;
-    font-size: 2rem;
-  }
-
-  &__description {
-    font-size: 1.5rem;
-    line-height: 1.6;
-    max-height: 12rem;
-    overflow: hidden;
-  }
-
-  &__btn {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    height: 8rem;
-    width: 8rem;
-    background-color: var(--color-3);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--color-1);
-    transition: all .3s;
-
-    &:hover {
-      background-color: var(--color-1);
-      color: white;
-    }
-
-    ion-icon {
-      font-size: 2rem;
-      color: inherit;
-    }
-  }
-}
-
-// course details page
-.course-page {
-
-  &__heading {
-    display: inline-flex;
-    align-items: center;
-    margin-bottom: 3rem;
-  }
-  
-  &__back {
-    width: 6rem;
-    height: 6rem;
-    background-color: var(--color-1);
-    font-size: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    margin-right: 2rem;
-    border-radius: 2px;
-
-    &:hover {
-      background-color: var(--color-2);
-    }
-  }
-
-  &__id {
-    color: var(--color-1);
-  }
-
-  // &__title {
-  // }
-
-  &__about {
-    line-height: 1.6;
-    letter-spacing: .3px;
-  }
-
-  &__statistics {
-    margin-top: 2rem;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  &__card {
-    background-color: white;
-    width: 15rem;
-    height: 15rem;
-    box-shadow: 0 1rem 1rem rgba(black, .1);
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    font-weight: 900;
-    position: relative;
-    cursor: pointer;
-
-    &:hover {
-      box-shadow: 0 1rem 1rem rgba(black, .2);
-    }
-
-    &:not(:last-child) {
-      margin-right: 3rem;
-
-      &::after {
-        content: "";
-        display: inline-flex;
-        height: 2px;
-        width: 100%;
-        background-color: tomato;
-        position: absolute;
-        left: 100%;
-      }
-    }
-  }
-
-  &__label {
-    font-weight: 400;
-    margin-top: 1rem;
-    text-transform: uppercase;
-    font-size: 1.4rem;
-    letter-spacing: 1px;
-  }
-
-  &__materials {
-
-  }
-
-  &__no-material {
-    margin-top: 1rem;
   }
 }

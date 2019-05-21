@@ -12,7 +12,6 @@
   <br><br>
 
   <!--stats-->
-  <h2>Statistics 📚 </h2>
   <div class="course-page__statistics">
     <div class="course-page__card">
       0{{ course.duration }}
@@ -38,13 +37,13 @@
 
   <!--material-->
   <br><br>
-  <h2>Materials 💗 </h2>
   <div class="course-page__materials" *ngIf="course.materials else nothing"></div>
   <ng-template #nothing>
-    <p class="course-page__no-material">
-      This course have no materials at the moment. Those content will be displayed here
-      when they are available. Stay in touch!
-    </p>
+    <div class="course-page__no-material">
+      <p>This course have no materials at the moment. Those content will be displayed here
+        when they are available. Stay in touch!</p>
+      <a class="btn">Add Content</a>
+    </div>
   </ng-template>
 </div>
 

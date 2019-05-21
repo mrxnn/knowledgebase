@@ -1,0 +1,59 @@
+// search box
+.search {
+    height: 8rem;
+    width: 100%;
+    background-color: var(--color-4);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3rem;
+    position: fixed;
+    z-index: 1;
+    
+    &__field {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      
+      ion-icon {
+        font-size: 2rem;
+        margin-right: 2rem;
+      }
+    }
+    
+    &__text {
+      width: 100%;
+      border: 0;
+      margin-right: 2rem;
+      font-family: inherit;
+      font-size: 1.6rem;
+      font-weight: bold;
+      outline: none;
+    }
+  
+    &__filters {
+      display: flex;
+      align-items: center;
+  
+      ion-icon {
+        font-size: 2rem;
+        margin-right: 2rem;
+      }
+    }
+  }
+
+  
+// avatar img
+.avatar {
+    width: 4rem;
+    height: 4rem;
+    background-image: linear-gradient(to right bottom, var(--color-1), var(--color-2));
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-4);
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+  }

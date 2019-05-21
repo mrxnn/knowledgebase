@@ -11,8 +11,4 @@ export class CoursesComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  onAddCourseButtonClicked() {
-    this.cs.displayForm = true;
-  }
 }
