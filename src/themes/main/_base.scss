@@ -170,6 +170,17 @@ body {
   &__group {
     display: flex;
     flex-direction: column;
+
+    &.flex {
+      flex-direction: row;
+      button {
+        flex: 1;
+        &:not(:last-child) {
+          margin-right: 1rem;
+        }
+      }
+    }
+
     &:not(:last-child) {
         margin-bottom: 2rem;
     }

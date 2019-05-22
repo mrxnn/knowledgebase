@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { EmployeeService } from '../employee.service';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-employee-update-form',
@@ -10,7 +11,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class EmployeeUpdateFormComponent implements OnInit {
 
-  constructor(public es: EmployeeService, private afs: AngularFirestore) { }
+  constructor(public es: EmployeeService, private afs: AngularFirestore, private router: Router) { }
 
   ngOnInit() {
   }
@@ -18,6 +19,11 @@ export class EmployeeUpdateFormComponent implements OnInit {
   onSubmit(form: NgForm) {
     this.afs.collection('employees').doc(form.value.id).set(form.value);
     this.es.selectedEmployee.next(null);
+    this.es.displayUpdateForm = false;
+  }
+
+  onView(employeeId: string) {
+    this.router.navigate(['/dashboard/employees', employeeId]);
     this.es.displayUpdateForm = false;
   }
   

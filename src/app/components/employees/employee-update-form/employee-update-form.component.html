@@ -49,6 +49,10 @@
         <ion-icon name="add"></ion-icon>
         <span>Remove Employee</span>
       </button>
+      <button class="btn" type="button" [disabled]="!form.valid" (click)="onView(employee.id)">
+        <ion-icon name="add"></ion-icon>
+        <span>View Employee</span>
+      </button>
     </div>
   </form>
 </div>

@@ -32,10 +32,14 @@
       <label for="audience" class="form__label">Audience</label>
       <input type="text" class="form__field" name="audience" [ngModel]="course.audience" required>
     </div>
-    <div class="form__group">
+    <div class="form__group flex">
       <button class="btn" type="submit" [disabled]="!form.valid">
         <ion-icon name="add"></ion-icon>
         <span>Update Course</span>
+      </button>
+      <button class="btn" type="button" (click)="onView(course.id)">
+        <ion-icon name="add"></ion-icon>
+        <span>View Course</span>
       </button>
       <button class="btn" type="button" (click)="onRemove(course.id)">
         <ion-icon name="add"></ion-icon>

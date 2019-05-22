@@ -53,6 +53,10 @@
         <ion-icon name="add"></ion-icon>
         <span>Remove Student</span>
       </button>
+      <button class="btn" type="button" [disabled]="!form.valid" (click)="onView(student.id)">
+        <ion-icon name="add"></ion-icon>
+        <span>View Student</span>
+      </button>
     </div>
   </form>
 </div>
