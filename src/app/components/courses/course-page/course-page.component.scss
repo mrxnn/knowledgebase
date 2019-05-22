@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
 // course details page
 .course-page {
 
@@ -72,7 +71,7 @@
         display: inline-flex;
         height: 2px;
         width: 100%;
-        background-color: tomato;
+        background-color: var(--color-1);
         position: absolute;
         left: 100%;
       }
