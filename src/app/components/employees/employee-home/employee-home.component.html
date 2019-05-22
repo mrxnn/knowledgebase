@@ -1,0 +1,28 @@
+<button class="add-btn" (click)="this.es.displayForm = true">
+    <ion-icon name="add"></ion-icon>
+  </button>
+  
+  <h1>Employees</h1>
+  
+  <table>
+    <thead>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Actions</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees | async">
+        <td>{{ employee.id }}</td>
+        <td>{{ employee.firstName }} {{ employee.lastName }}</td>
+        <td>{{ employee.email }}</td>
+        <td>{{ employee.phone }}</td>
+        <td>
+          <a [routerLink]="['/dashboard/employees', employee.id]" class="employee__btn">
+            <ion-icon name="arrow-round-forward"></ion-icon>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>

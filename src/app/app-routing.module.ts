@@ -12,6 +12,8 @@ import { CoursePageComponent } from './components/courses/course-page/course-pag
 import { CoursesHomeComponent } from './components/courses/courses-home/courses-home.component';
 import { StudentHomeComponent } from './components/students/student-home/student-home.component';
 import { StudentPageComponent } from './components/students/student-page/student-page.component';
+import { EmployeeHomeComponent } from './components/employees/employee-home/employee-home.component';
+import { EmployeePageComponent } from './components/employees/employee-page/employee-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -30,7 +32,15 @@ const routes: Routes = [
           { path: ':id', component: StudentPageComponent },
         ] 
       },
-      { path: 'employees', component: EmployeesComponent },
+      { 
+        path: 'employees', 
+        component: EmployeesComponent,
+        children: [
+          { path: '', redirectTo: 'home', pathMatch: 'full' },
+          { path: 'home', component: EmployeeHomeComponent },
+          { path: ':id', component: EmployeePageComponent },
+        ]
+      },
       { path: 'library', component: LibraryComponent },
       { path: 'finance', component: FinanceComponent },
       { 

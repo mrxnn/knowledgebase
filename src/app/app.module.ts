@@ -24,6 +24,9 @@ import { CourseFormComponent } from './components/courses/course-form/course-for
 import { StudentFormComponent } from './components/students/student-form/student-form.component';
 import { StudentPageComponent } from './components/students/student-page/student-page.component';
 import { StudentHomeComponent } from './components/students/student-home/student-home.component';
+import { EmployeeFormComponent } from './components/employees/employee-form/employee-form.component';
+import { EmployeeHomeComponent } from './components/employees/employee-home/employee-home.component';
+import { EmployeePageComponent } from './components/employees/employee-page/employee-page.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +45,10 @@ import { StudentHomeComponent } from './components/students/student-home/student
     CourseFormComponent,
     StudentFormComponent,
     StudentPageComponent,
-    StudentHomeComponent
+    StudentHomeComponent,
+    EmployeeFormComponent,
+    EmployeeHomeComponent,
+    EmployeePageComponent
   ],
   imports: [
     BrowserModule,
