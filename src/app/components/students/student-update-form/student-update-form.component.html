@@ -1,0 +1,58 @@
+<div class="form-container" *ngIf="ss.selectedStudent | async as student">
+  <form class="form" (ngSubmit)="onSubmit(form)" #form="ngForm" [class.form--active]="ss.displayUpdateForm">
+    <button class="form-close" type="button" (click)="ss.displayUpdateForm = false;">
+      <ion-icon name="close"></ion-icon>
+    </button>
+    <input type="text" hidden [ngModel]="student.id" name="id">
+    <div class="form__group">
+      <label for="firstName" class="form__label">First Name</label>
+      <input type="text" class="form__field" [ngModel]="student.firstName" name="firstName" required>
+    </div>
+    <div class="form__group">
+      <label for="lastName" class="form__label">Last Name</label>
+      <input type="text" class="form__field" [ngModel]="student.lastName" name="lastName" required>
+    </div>
+    <div class="form__group">
+      <label for="age" class="form__label">Age</label>
+      <input type="number" class="form__field" [ngModel]="student.age" name="age" required>
+    </div>
+    <div class="form__group">
+      <label for="email" class="form__label">Email Address</label>
+      <input type="email" class="form__field" [ngModel]="student.email" name="email" required>
+    </div>
+    <div class="form__group">
+      <label for="phone" class="form__label">Phone</label>
+      <input type="text" class="form__field" [ngModel]="student.phone" name="phone" required>
+    </div>
+    <div class="form__group">
+      <label for="nic" class="form__label">NIC</label>
+      <input type="text" class="form__field" [ngModel]="student.nic" name="nic" required>
+    </div>
+    <div class="form__group">
+      <label for="guardianName" class="form__label">Guardian Name</label>
+      <input type="text" class="form__field" [ngModel]="student.guardianName" name="guardianName" required>
+    </div>
+    <div class="form__group">
+      <label for="guardianPhone" class="form__label">Guardian Phone</label>
+      <input type="text" class="form__field" [ngModel]="student.guardianPhone" name="guardianPhone" required>
+    </div>
+    <!-- <div class="form__group">
+      <label for="level" class="form__label">Level</label>
+      <select class="form__field" ngModel name="level" required>
+        <option value="Beginner">Beginner</option>
+        <option value="Intermediate">Intermediate</option>
+        <option value="Advanced">Advanced</option>
+      </select>
+    </div> -->
+    <div class="form__group">
+      <button class="btn" type="submit" [disabled]="!form.valid">
+        <ion-icon name="add"></ion-icon>
+        <span>Update Student</span>
+      </button>
+      <button class="btn" type="button" [disabled]="!form.valid" (click)="onRemove(student.id)">
+        <ion-icon name="add"></ion-icon>
+        <span>Remove Student</span>
+      </button>
+    </div>
+  </form>
+</div>

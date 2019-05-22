@@ -24,4 +24,9 @@ export class StudentHomeComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  showUpdateForm(student: Student) {
+    this.ss.displayUpdateForm = true;
+    this.ss.selectedStudent.next(student);
+  }
 }

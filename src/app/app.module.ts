@@ -28,6 +28,7 @@ import { EmployeeFormComponent } from './components/employees/employee-form/empl
 import { EmployeeHomeComponent } from './components/employees/employee-home/employee-home.component';
 import { EmployeePageComponent } from './components/employees/employee-page/employee-page.component';
 import { CourseUpdateFormComponent } from './components/courses/course-update-form/course-update-form.component';
+import { StudentUpdateFormComponent } from './components/students/student-update-form/student-update-form.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { CourseUpdateFormComponent } from './components/courses/course-update-fo
     EmployeeFormComponent,
     EmployeeHomeComponent,
     EmployeePageComponent,
-    CourseUpdateFormComponent
+    CourseUpdateFormComponent,
+    StudentUpdateFormComponent
   ],
   imports: [
     BrowserModule,
