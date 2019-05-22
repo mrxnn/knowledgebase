@@ -121,6 +121,27 @@ body {
   justify-content: center;
   align-items: center;
   pointer-events: none;
+
+  .form-close {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    color: black;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 1rem;
+
+    &:hover {
+      background-color: #5155cc;
+      color: white;
+      font-weight: 600;
+    }
+  }
 }
 
 // forms
@@ -128,6 +149,7 @@ body {
   pointer-events: all;
   background-color: white;
   padding: 3rem 2rem;
+  padding-top: 5rem;
   width: 35%;
   height: 100%;
   position: absolute;
@@ -135,35 +157,10 @@ body {
   right: 0;
   transform: translateX(130%);
   transition: transform .5s ease-out;
-  overflow-y: auto;
+  overflow: scroll;
 
   &--active {
     transform: translateX(0);
-  }
-
-  &__close-btn {
-    position: absolute;
-    top: 6rem;
-    left: -10rem;
-    padding: .5rem;
-    border: 1px solid gray;
-    border-radius: 50%;
-    outline: none;
-    width: 6rem;
-    height: 6rem;
-    color: white;
-    background-color: transparent;
-    font-size: 3rem;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 5;
-
-    &:hover {
-      background-color: white;
-      color: black;
-    }
   }
 
   &__group {
