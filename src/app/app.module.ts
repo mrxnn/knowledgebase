@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 // firebase
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -30,6 +31,11 @@ import { EmployeePageComponent } from './components/employees/employee-page/empl
 import { CourseUpdateFormComponent } from './components/courses/course-update-form/course-update-form.component';
 import { StudentUpdateFormComponent } from './components/students/student-update-form/student-update-form.component';
 import { EmployeeUpdateFormComponent } from './components/employees/employee-update-form/employee-update-form.component';
+import { LoginComponent } from './auth/login/login.component';
+import { AuthService } from './auth/auth.service';
+import { CourseService } from './components/courses/course.service';
+import { StudentService } from './components/students/student.service';
+import { EmployeeService } from './components/employees/employee.service';
 
 @NgModule({
   declarations: [
@@ -54,16 +60,18 @@ import { EmployeeUpdateFormComponent } from './components/employees/employee-upd
     EmployeePageComponent,
     CourseUpdateFormComponent,
     StudentUpdateFormComponent,
-    EmployeeUpdateFormComponent
+    EmployeeUpdateFormComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    AngularFireAuthModule,
     FormsModule
   ],
-  providers: [],
+  providers: [AuthService, CourseService, StudentService, EmployeeService],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })

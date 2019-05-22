@@ -14,10 +14,12 @@ import { StudentHomeComponent } from './components/students/student-home/student
 import { StudentPageComponent } from './components/students/student-page/student-page.component';
 import { EmployeeHomeComponent } from './components/employees/employee-home/employee-home.component';
 import { EmployeePageComponent } from './components/employees/employee-page/employee-page.component';
+import { LoginComponent } from './auth/login/login.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
   { 
     path: 'dashboard', 
     component: DashboardComponent,

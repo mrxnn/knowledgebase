@@ -1,0 +1,43 @@
+<div class="login-page">
+    <div class="login">
+  
+      <div class="login__navbar">
+        <button class="login__nav">Sign Up</button>
+        <button class="login__nav login__nav--active">Sign In</button>
+      </div>
+  
+      <div class="login__content">
+        <h2 class="login__header">Sign in to your account</h2>
+        <h5 class="login__message">"The life you've led doesn’t need to be the only life you have" <br> Anna Quindlen</h5>
+  
+        <div class="login__social-buttons">
+          <button class="login__social-btn login__social-btn--google" (click)="auth.googleSignin()">
+            <img src="assets/svg/google-svg.svg" alt="">
+            <span>Sign In with Google</span>
+          </button>
+          <button class="login__social-btn login__social-btn--facebook">
+            <img src="assets/svg/facebook-svg.svg" alt="">
+            <span>Sign In with Facebook</span>
+          </button>
+        </div>
+  
+        <div class="login__separator">
+          <div></div>
+          <h3>or</h3>
+          <div></div>
+        </div>
+        
+        <input type="email" class="login__input" placeholder="Email Address">
+        <input type="password" class="login__input" placeholder="Password">
+        
+        <p class="login__terms">
+          By clicking Sign In, you agree to our <a href="#" class="login__link">Terms of Use</a> and our <a href="#" class="login__link">Privacy Policy.</a>
+        </p>
+        
+        <button class="login__button" (click)="auth.signOut()">Sign In</button>
+        <a href="#" class="login__link login__link--small">Forgot your password?</a>
+  
+      </div>
+  
+    </div>
+  </div>
