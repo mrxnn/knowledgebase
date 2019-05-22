@@ -1,0 +1,28 @@
+<button class="add-btn" (click)="this.ss.displayForm = true">
+  <ion-icon name="add"></ion-icon>
+</button>
+
+<h1>Students</h1>
+
+<table>
+  <thead>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Actions</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let student of students | async">
+      <td>{{ student.id }}</td>
+      <td>{{ student.firstName }} {{ student.lastName }}</td>
+      <td>{{ student.email }}</td>
+      <td>{{ student.phone }}</td>
+      <td>
+        <a [routerLink]="['/dashboard/students', student.id]" class="student__btn">
+          <ion-icon name="arrow-round-forward"></ion-icon>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>

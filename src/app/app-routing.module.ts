@@ -10,6 +10,8 @@ import { FinanceComponent } from './components/finance/finance.component';
 import { CoursesComponent } from './components/courses/courses.component';
 import { CoursePageComponent } from './components/courses/course-page/course-page.component';
 import { CoursesHomeComponent } from './components/courses/courses-home/courses-home.component';
+import { StudentHomeComponent } from './components/students/student-home/student-home.component';
+import { StudentPageComponent } from './components/students/student-page/student-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -19,7 +21,15 @@ const routes: Routes = [
     component: DashboardComponent,
     children: [
       { path: '', redirectTo: 'students', pathMatch: 'full' },
-      { path: 'students', component: StudentsComponent },
+      { 
+        path: 'students', 
+        component: StudentsComponent,
+        children: [
+          { path: '', redirectTo: 'home', pathMatch: 'full' },
+          { path: 'home', component: StudentHomeComponent },
+          { path: ':id', component: StudentPageComponent },
+        ] 
+      },
       { path: 'employees', component: EmployeesComponent },
       { path: 'library', component: LibraryComponent },
       { path: 'finance', component: FinanceComponent },
