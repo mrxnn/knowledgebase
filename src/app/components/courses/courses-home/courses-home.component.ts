@@ -23,4 +23,9 @@ export class CoursesHomeComponent implements OnInit {
       }))
     );
   }
+
+  showUpdateForm(course: Course) {
+    this.cs.displayUpdateForm = true;
+    this.cs.selectedCourse.next(course);
+  }
 }

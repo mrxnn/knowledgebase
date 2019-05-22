@@ -1,0 +1,46 @@
+<div class="form-container" *ngIf="cs.selectedCourse | async as course">
+  <form class="form" (ngSubmit)="onSubmit(form)" #form="ngForm" [class.form--active]="cs.displayUpdateForm">
+    <button class="form-close" type="button" (click)="cs.displayUpdateForm = false;">
+      <ion-icon name="close"></ion-icon>
+    </button>
+    <input type="text" hidden [ngModel]="course.id" name="id">
+    <div class="form__group">
+      <label for="title" class="form__label">Title</label>
+      <input type="text" class="form__field" [ngModel]="course.title" name="title" required>
+    </div>
+    <div class="form__group">
+      <label for="description" class="form__label">Description</label>
+      <textarea rows="3" class="form__field" name="description" [ngModel]="course.description" required></textarea>
+    </div>
+    <div class="form__group">
+      <label for="duration" class="form__label">Duration</label>
+      <input type="number" class="form__field" name="duration" [ngModel]="course.duration" required>
+    </div>
+    <div class="form__group">
+      <label for="maxStudents" class="form__label">Max Students</label>
+      <input type="number" class="form__field" name="maxStudents" [ngModel]="course.maxStudents" required>
+    </div>
+    <div class="form__group">
+      <label for="level" class="form__label">Level</label>
+      <select class="form__field" name="level" [ngModel]="course.level" required>
+        <option value="Beginner">Beginner</option>
+        <option value="Intermediate">Intermediate</option>
+        <option value="Advanced">Advanced</option>
+      </select>
+    </div>
+    <div class="form__group">
+      <label for="audience" class="form__label">Audience</label>
+      <input type="text" class="form__field" name="audience" [ngModel]="course.audience" required>
+    </div>
+    <div class="form__group">
+      <button class="btn" type="submit" [disabled]="!form.valid">
+        <ion-icon name="add"></ion-icon>
+        <span>Update Course</span>
+      </button>
+      <button class="btn" type="button" (click)="onRemove(course.id)">
+        <ion-icon name="add"></ion-icon>
+        <span>Remove Course</span>
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,5 +1,9 @@
 <!--overlay mask-->
-<div class="mask" [class.mask--active]="cs.displayForm || ss.displayForm || es.displayForm"></div>
+<div class="mask" 
+  [class.mask--active]="cs.displayForm ||
+                        cs.displayUpdateForm || 
+                        ss.displayForm || 
+                        es.displayForm"></div>
 
 <!--content-->
 <router-outlet></router-outlet>

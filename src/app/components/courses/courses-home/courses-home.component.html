@@ -6,8 +6,8 @@
   <li *ngFor="let course of courses | async" class="course">
     <h4 class="course__title">{{ course.title }}</h4>
     <p class="course__description">{{ course.description }}</p>
-    <a [routerLink]="['/dashboard/courses', course.id]" class="course__btn">
+    <button class="course__btn" (click)="showUpdateForm(course)">
       <ion-icon name="arrow-round-forward"></ion-icon>
-    </a>
+    </button>
   </li>
 </ul>

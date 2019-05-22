@@ -52,6 +52,10 @@
       align-items: center;
       color: var(--color-1);
       transition: all .3s;
+      border: none;
+      outline: none;
+      font: inherit;
+      cursor: pointer;
   
       &:hover {
         background-color: var(--color-1);
