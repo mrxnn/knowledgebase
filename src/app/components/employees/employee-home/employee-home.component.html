@@ -19,9 +19,9 @@
         <td>{{ employee.email }}</td>
         <td>{{ employee.phone }}</td>
         <td>
-          <a [routerLink]="['/dashboard/employees', employee.id]" class="employee__btn">
+          <button class="employee__btn" (click)="showUpdateForm(employee)">
             <ion-icon name="arrow-round-forward"></ion-icon>
-          </a>
+          </button>
         </td>
       </tr>
     </tbody>

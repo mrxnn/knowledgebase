@@ -24,4 +24,9 @@ export class EmployeeHomeComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  showUpdateForm(employee: Employee) {
+    this.es.displayUpdateForm = true;
+    this.es.selectedEmployee.next(employee);
+  }
 }

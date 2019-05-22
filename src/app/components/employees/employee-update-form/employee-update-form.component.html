@@ -1,0 +1,54 @@
+<div class="form-container" *ngIf="es.selectedEmployee | async as employee">
+  <form class="form" (ngSubmit)="onSubmit(form)" #form="ngForm" [class.form--active]="es.displayUpdateForm">
+    <button class="form-close" type="button" (click)="es.displayUpdateForm = false;">
+      <ion-icon name="close"></ion-icon>
+    </button>
+    <input type="text" hidden [ngModel]="employee.id" name="id">
+    <div class="form__group">
+      <label for="firstName" class="form__label">First Name</label>
+      <input type="text" class="form__field" [ngModel]="employee.firstName" name="firstName" required>
+    </div>
+    <div class="form__group">
+      <label for="lastName" class="form__label">Last Name</label>
+      <input type="text" class="form__field" [ngModel]="employee.lastName" name="lastName" required>
+    </div>
+    <div class="form__group">
+      <label for="age" class="form__label">Age</label>
+      <input type="number" class="form__field" [ngModel]="employee.age" name="age" required>
+    </div>
+    <div class="form__group">
+      <label for="email" class="form__label">Email</label>
+      <input type="email" class="form__field" [ngModel]="employee.email" name="email" required>
+    </div>
+    <div class="form__group">
+      <label for="phone" class="form__label">Phone</label>
+      <input type="text" class="form__field" [ngModel]="employee.phone" name="phone" required>
+    </div>
+    <div class="form__group">
+      <label for="nic" class="form__label">NIC</label>
+      <input type="text" class="form__field" [ngModel]="employee.nic" name="nic" required>
+    </div>
+    <div class="form__group">
+      <label for="basicSalary" class="form__label">Basic Salary</label>
+      <input type="text" class="form__field" [ngModel]="employee.basicSalary" name="basicSalary" required>
+    </div>
+    <div class="form__group">
+      <label for="otHours" class="form__label">OT Hours</label>
+      <input type="text" class="form__field" [ngModel]="employee.otHours" name="otHours" required>
+    </div>
+    <div class="form__group">
+      <label for="otRate" class="form__label">OT Rate</label>
+      <input type="text" class="form__field" [ngModel]="employee.otRate" name="otRate" required>
+    </div>
+    <div class="form__group">
+      <button class="btn" type="submit" [disabled]="!form.valid">
+        <ion-icon name="add"></ion-icon>
+        <span>Update Employee</span>
+      </button>
+      <button class="btn" type="button" [disabled]="!form.valid" (click)="onRemove(employee.id)">
+        <ion-icon name="add"></ion-icon>
+        <span>Remove Employee</span>
+      </button>
+    </div>
+  </form>
+</div>
