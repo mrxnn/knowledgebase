@@ -1,0 +1,25 @@
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.attendance {
+  flex: 1;
+  background-color: white;
+  padding: 3rem;
+
+  div {
+    display: block;
+    margin: 2rem 0;
+  }
+
+  input {
+    width: 100%;
+    border: 1px solid #e0e0e0;
+    padding: 1rem;
+  }
+
+  &:not(:last-child) {
+    margin-right: 4rem;
+  }
+}

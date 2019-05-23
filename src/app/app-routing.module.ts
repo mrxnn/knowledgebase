@@ -15,6 +15,7 @@ import { StudentPageComponent } from './components/students/student-page/student
 import { EmployeeHomeComponent } from './components/employees/employee-home/employee-home.component';
 import { EmployeePageComponent } from './components/employees/employee-page/employee-page.component';
 import { LoginComponent } from './auth/login/login.component';
+import { AttendanceComponent } from './components/attendance/attendance.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -54,6 +55,9 @@ const routes: Routes = [
           { path: ':id', component: CoursePageComponent },
         ]
       },
+      {
+        path: 'attendance', component: AttendanceComponent
+      }
     ]
   }
 ];

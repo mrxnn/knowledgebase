@@ -1,0 +1,31 @@
+<div class="flex">
+  <div class="attendance">
+    <h3>Employee Attendance</h3>
+    <div>
+      <label>Attendance Date</label>
+      <input type="date" #employeeAttendanceDate>
+    </div>
+    <div>
+      <label>Employee Id</label>
+      <input type="text" #employeeAttendanceId>
+    </div>
+    <div>
+      <button class="btn" (click)="recordEmployeeAttendance()">Record</button>
+    </div>
+  </div>
+
+  <div class="attendance">
+    <h3>Student Attendance</h3>
+    <div>
+      <label>Attendance Date</label>
+      <input type="date" #studentAttendanceDate>
+    </div>
+    <div>
+      <label>Student Id</label>
+      <input type="text" #studentAttendanceId>
+    </div>
+    <div>
+      <button class="btn" (click)="recordStudentAttendance()">Record</button>
+    </div>
+  </div>
+</div>

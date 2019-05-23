@@ -40,6 +40,7 @@ import { CourseService } from './components/courses/course.service';
 import { StudentService } from './components/students/student.service';
 import { EmployeeService } from './components/employees/employee.service';
 import { MdEditorComponent } from './components/courses/md-editor/md-editor.component';
+import { AttendanceComponent } from './components/attendance/attendance.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { MdEditorComponent } from './components/courses/md-editor/md-editor.comp
     StudentUpdateFormComponent,
     EmployeeUpdateFormComponent,
     LoginComponent,
-    MdEditorComponent
+    MdEditorComponent,
+    AttendanceComponent
   ],
   imports: [
     BrowserModule,
