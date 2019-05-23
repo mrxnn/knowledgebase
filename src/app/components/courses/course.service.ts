@@ -9,6 +9,7 @@ import { tap } from 'rxjs/operators';
 export class CourseService {
   displayForm: boolean;
   displayUpdateForm: boolean;
+  displayMarkdownEditor: boolean;
   selectedCourse = new BehaviorSubject<Course>({
     title: '',
     description: '',

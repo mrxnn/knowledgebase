@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { switchMap, map } from 'rxjs/operators';
+import { switchMap, map, tap } from 'rxjs/operators';
 import { of, Observable } from 'rxjs';
 import { Course } from '../course.model';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { CourseService } from '../course.service';
 
 @Component({
   selector: 'app-course-page',
@@ -12,20 +13,31 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class CoursePageComponent implements OnInit {
   course: Observable<Course>;
+  courseId: string;
+  markdownContent: string;
 
-  constructor(private route: ActivatedRoute, private afs: AngularFirestore) { }
+  constructor(private route: ActivatedRoute, private afs: AngularFirestore, public cs: CourseService) { }
 
   ngOnInit() {
     this.course = this.route.paramMap.pipe(
+      tap(params => this.courseId = params.get('id')),
       switchMap(params => {
         const id = params.get('id');
         return this.afs.doc<Course>(`courses/${id}`).snapshotChanges().pipe(
           map(course => {
             const id = course.payload.id;
+            this.markdownContent = course.payload.data().mdContent;
             return { id, ...course.payload.data() }
           })
         );
       })
     );
+  }
+
+  onMdContentChanged(content: string) {
+    this.afs.collection('courses').doc(this.courseId).update({
+      mdContent: content
+    });
+    this.markdownContent = content;
   }
 }

@@ -1,0 +1,15 @@
+<div class="md-container">
+  <div class="md-editor" [class.md-editor--active]="cs.displayMarkdownEditor">
+    <button class="btn" (click)="onPublish()">Publish</button>
+    <button class="btn" (click)="cs.displayMarkdownEditor = false">Close</button>
+    <md-editor
+      class="editor"
+      name="content" 
+      [(ngModel)]="content" 
+      [height]="'92vh'" 
+      mode="mode" 
+      required 
+      maxlength="1500">
+    </md-editor>
+  </div>
+</div>

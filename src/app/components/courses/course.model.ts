@@ -7,4 +7,5 @@ export interface Course {
   currentStudents: number;
   level: string;
   audience: string;
+  mdContent?: string;
 }

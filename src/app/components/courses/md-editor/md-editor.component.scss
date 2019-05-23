@@ -1,0 +1,35 @@
+.md-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+
+  .md-editor {
+    pointer-events: all;
+    background-color: white;
+    padding-top: 5rem;
+    width: 70%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+    transition: transform .5s ease-out;
+    overflow: scroll;
+
+    &--active {
+      transform: translateX(0);
+    }
+
+    .btn {
+      margin-left: .7rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .editor {
+    width: 100%;
+  }
+}

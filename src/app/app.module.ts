@@ -8,6 +8,9 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
+// md
+import { LMarkdownEditorModule } from 'ngx-markdown-editor';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -36,6 +39,7 @@ import { AuthService } from './auth/auth.service';
 import { CourseService } from './components/courses/course.service';
 import { StudentService } from './components/students/student.service';
 import { EmployeeService } from './components/employees/employee.service';
+import { MdEditorComponent } from './components/courses/md-editor/md-editor.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +65,8 @@ import { EmployeeService } from './components/employees/employee.service';
     CourseUpdateFormComponent,
     StudentUpdateFormComponent,
     EmployeeUpdateFormComponent,
-    LoginComponent
+    LoginComponent,
+    MdEditorComponent
   ],
   imports: [
     BrowserModule,
@@ -69,7 +74,8 @@ import { EmployeeService } from './components/employees/employee.service';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    FormsModule
+    FormsModule,
+    LMarkdownEditorModule
   ],
   providers: [AuthService, CourseService, StudentService, EmployeeService],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
