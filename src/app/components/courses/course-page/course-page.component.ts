@@ -5,6 +5,7 @@ import { of, Observable } from 'rxjs';
 import { Course } from '../course.model';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { CourseService } from '../course.service';
+import { NotificationService } from '../../../notification/notification.service';
 
 @Component({
   selector: 'app-course-page',
@@ -16,7 +17,7 @@ export class CoursePageComponent implements OnInit {
   courseId: string;
   markdownContent: string;
 
-  constructor(private route: ActivatedRoute, private afs: AngularFirestore, public cs: CourseService) { }
+  constructor(private route: ActivatedRoute, private afs: AngularFirestore, public cs: CourseService, private ns: NotificationService) { }
 
   ngOnInit() {
     this.course = this.route.paramMap.pipe(
@@ -39,5 +40,7 @@ export class CoursePageComponent implements OnInit {
       mdContent: content
     });
     this.markdownContent = content;
+
+    this.ns.broadcast({ content: 'Markdown Updated' });
   }
 }

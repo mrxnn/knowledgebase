@@ -3,6 +3,7 @@ import { EmployeeService } from '../employee.service';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Employee } from '../employee.model';
 import { NgForm } from '@angular/forms/src/directives/ng_form';
+import { NotificationService } from '../../../notification/notification.service';
 
 @Component({
   selector: 'app-employee-form',
@@ -12,7 +13,7 @@ import { NgForm } from '@angular/forms/src/directives/ng_form';
 export class EmployeeFormComponent implements OnInit {
   employeesCollection: AngularFirestoreCollection<Employee>;
 
-  constructor(public es: EmployeeService, private afs: AngularFirestore) { }
+  constructor(public es: EmployeeService, private afs: AngularFirestore, private ns: NotificationService) { }
 
   ngOnInit() {
     this.employeesCollection = this.afs.collection<Employee>('employees');
@@ -21,5 +22,6 @@ export class EmployeeFormComponent implements OnInit {
   onSubmit(form: NgForm) {
     this.employeesCollection.add(form.value);
     this.es.displayForm = false;
+    this.ns.broadcast({content: 'Employee Added'});
   }
 }

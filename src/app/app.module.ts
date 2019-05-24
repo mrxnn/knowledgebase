@@ -41,6 +41,7 @@ import { StudentService } from './components/students/student.service';
 import { EmployeeService } from './components/employees/employee.service';
 import { MdEditorComponent } from './components/courses/md-editor/md-editor.component';
 import { AttendanceComponent } from './components/attendance/attendance.component';
+import { NotificationComponent } from './components/notification/notification.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import { AttendanceComponent } from './components/attendance/attendance.componen
     EmployeeUpdateFormComponent,
     LoginComponent,
     MdEditorComponent,
-    AttendanceComponent
+    AttendanceComponent,
+    NotificationComponent
   ],
   imports: [
     BrowserModule,

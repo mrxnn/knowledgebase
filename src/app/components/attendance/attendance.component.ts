@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { NotificationService } from '../../notification/notification.service';
 
 @Component({
   selector: 'app-attendance',
@@ -12,7 +13,7 @@ export class AttendanceComponent implements OnInit {
   @ViewChild('studentAttendanceDate') studentAttendanceDate: ElementRef;
   @ViewChild('studentAttendanceId') studentAttendanceId: ElementRef;
 
-  constructor(private afs: AngularFirestore) { }
+  constructor(private afs: AngularFirestore, private ns: NotificationService) { }
 
   ngOnInit() {
   }
@@ -24,6 +25,7 @@ export class AttendanceComponent implements OnInit {
     });
 
     this.employeeAttendanceId.nativeElement.value = '';
+    this.ns.broadcast({content: 'Attendance Recorded'});
   }
 
   recordStudentAttendance() {
@@ -33,5 +35,6 @@ export class AttendanceComponent implements OnInit {
     });
 
     this.studentAttendanceId.nativeElement.value = '';
+    this.ns.broadcast({content: 'Attendance Recorded'});
   }
 }

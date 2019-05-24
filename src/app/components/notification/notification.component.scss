@@ -1,0 +1,27 @@
+.notification {
+  position: fixed;
+  bottom: 2rem;
+  width: 100vw;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 15;
+  opacity: 0;
+  transition: opacity .5s;
+
+  &--active {
+    opacity: 1;
+  }
+
+  h3 {
+    background-color: rgba(#686de0, .5);
+    color: #686de0;
+    font-weight: 500;
+    padding: .7rem 2rem;
+    border-radius: 2px;
+    min-width: 50rem;
+    text-align: center;
+    font-size: 1.4rem;
+    color: white;
+  }
+}

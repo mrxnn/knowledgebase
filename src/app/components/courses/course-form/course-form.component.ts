@@ -3,6 +3,7 @@ import { CourseService } from '../course.service';
 import { NgForm } from '@angular/forms';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Course } from '../course.model';
+import { NotificationService } from '../../../notification/notification.service';
 
 @Component({
   selector: 'app-course-form',
@@ -12,7 +13,7 @@ import { Course } from '../course.model';
 export class CourseFormComponent implements OnInit {
   coursesCollection: AngularFirestoreCollection<Course>;
 
-  constructor(public cs: CourseService, private afs: AngularFirestore) { }
+  constructor(public cs: CourseService, private afs: AngularFirestore, private ns: NotificationService) { }
 
   ngOnInit() {
     this.coursesCollection = this.afs.collection<Course>('courses');
@@ -21,5 +22,6 @@ export class CourseFormComponent implements OnInit {
   onSubmit(form: NgForm) {
     this.coursesCollection.add(form.value);
     this.cs.displayForm = false;
+    this.ns.broadcast({ content: "Course Added" });
   }
 }
